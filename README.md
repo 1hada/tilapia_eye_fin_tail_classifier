@@ -1,11 +1,11 @@
 # TILAPIA EYE FIN TAIL classifer
-This classifier is a base classifier showing feasability for other work fish related work.
-In my case, I wanted the classifier so that I could triangulate an area where I could inspect the fish body without having to segment the fish from the environment.
+* This is a project I undertook in SUMMER 2020.
+* I wanted a classifier so that I could triangulate an area where I could inspect a fish body.
 
-![healthy fish 6](./media/h_006.jpeg)
+![healthy fish 6](./media/h_006.jpeg "healthy fish 6")
 
 # Summary
-This is a project I undertook in SUMMER 2020.
+
 * I use pytorch's torchvision in order to augment 6 images into 200 train and validation. These are the transformations I used.
 ```
     transforms = torchvision.transforms.Compose([
@@ -28,9 +28,9 @@ recall    = 81.58 %
 F_measure = 84.93 % 
 ```
 * The resulting images from my previous tests are included in the media directory, I'll show some now.
-![healthy fish 5](./media/h_005.jpeg)
+![healthy fish 5](./media/h_005.jpeg "healthy fish 5")
 * I used the original large model as a starting off point. The following is the validation loss.
-![tensorboard screenshot](./media/tensorboard_screenshot.png)
+![tensorboard screenshot](./media/tensorboard_screenshot.png "tensorboard screenshot")
 
 
 
@@ -72,7 +72,7 @@ Here, we are able to pass a number of arguments:
 python3 train.py --img 255 --batch 16 --epochs 10 --data '../tilapia/classes/data.yaml' --cfg ./models/yolov5l.yaml --weights './weights/yolov5l.pt' --name yolov5s_results  --cache
 ```
 
-![sick fish 9](./media/c_9.jpeg)
+![sick fish 9](./media/c_9.jpeg "sick fish 9")
 
 # Requirements
 
