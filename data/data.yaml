@@ -1,0 +1,5 @@
+train: ../tilapia/classes/train/images
+val: ../tilapia/classes/valid/images
+
+nc: 3
+names: ['eye', 'fin', 'tail']
