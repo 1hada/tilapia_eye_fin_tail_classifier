@@ -28,16 +28,16 @@ recall    = 81.58 %
 F_measure = 84.93 % 
 ```
 * The resulting images from my previous tests are included in the media directory, I'll show some now.
-![healthy fish 3](./media/h_003.jpeg)
+![healthy fish 5](./media/h_005.jpeg)
 * I used the original large model as a starting off point. The following is the validation loss.
 ![tensorboard screenshot](./media/tensorboard_screenshot.png)
 
 
 
 # Instructions to detect
-
+Running the following will produce images like what is found in the media directory.
 ```
-python3 detect.py --weights './weights/tilapia_last_300_l.pt' --img 416 --conf 0.3 --source ../tilapia/healthy/h_005.jpeg
+python3 detect.py --weights './weights/tilapia_l.pt' --img 416 --conf 0.3 --source ./data/test
 ```
 
 # Instructions to augment images
@@ -45,8 +45,9 @@ The training_prep script augments the images.
 It takes an absolute path to the train and valid directories that I included in my data directory.
 ### example :
 ```
-python3 training_prep.py /ABSOLUTE/PATH/tilapia_eye_fin_tail_classifier/data/train
-python3 training_prep.py /ABSOLUTE/PATH/tilapia_eye_fin_tail_classifier/data/valid
+cd ./tilapia_eye_fin_tail_classifier # you shouldve been here already if you ran detect.py
+python3 training_prep.py $PWD/data/train
+python3 training_prep.py $PWD/data/valid
 ```
 From here I leave some template YOLO formatted labels, I used a program to label them and you can find many online. (example : [labelImg](https://github.com/tzutalin/labelImg) )
 In the future I would spend more time on working on labeling the original images and using known values from transforms to autolabel. (Such a task may require something other than torchvision)
